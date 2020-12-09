@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const userRoute = require('./routes/userRoute');
 const passport = require('./utils/pass.js');
 const authRoute = require('./routes/authRoute');
+const storyRoute = require('./routes/storyRoute');
 const app2 = express();
 
 app2.enable('trust proxy');
@@ -42,7 +43,7 @@ app2.use(express.static('uploads'));
 app2.use('/thumbnails', express.static('thumbnails'));
 
 app2.use('/auth', authRoute);
-//app.use('/cat', passport.authenticate('jwt', {session: false}), catRoute);
+app2.use('/story', storyRoute);
 app2.use('/user', passport.authenticate('jwt', {session: false}), userRoute);
 
 // http

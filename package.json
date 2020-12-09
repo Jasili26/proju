@@ -26,6 +26,7 @@
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "sharp": "^0.26.3",
-    "util-promisify": "^2.1.0"
+    "util-promisify": "^2.1.0",
+    "util.promisify": "^1.0.1"
   }
 }

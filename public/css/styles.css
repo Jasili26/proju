@@ -21,7 +21,7 @@ h1 {
     letter-spacing: 2px;
     border: 3px solid #ffffff;
     position: absolute;
-    top: 20%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 40px 50px;
@@ -88,7 +88,6 @@ h1 {
     position: absolute;
     top: 53%;
     left: 12%;
-
 }
 
 /*#kirjaudulomake {
@@ -99,15 +98,23 @@ h1 {
     opacity: 1;
 }
 
+#kirjaudusisaan {
+    margin: 35px 0px;
+}
+
 #myForm {
     padding: 10px;
     max-height: 100%;
 }
 
+#luouusitili {
+    margin: 10px 0px;
+}
+
 #rekisteroidy {
     color: #0b6e4f;
     background-color: white;
-
+    top: 61%;
 }
 
 
@@ -198,16 +205,17 @@ h1 {
         position: relative;
         font-size: 17px;
         width: 80%;
-        top: 25%
+        top: -20px;
     }
 
     #teksti {
         background-color: #0b6e4f;
+        color: white;
         padding: 15px;
         text-align: center;
         font-size: 15px;
         position: absolute;
-        top: 50%;
+        top: 57%;
         opacity: 1;
     }
 

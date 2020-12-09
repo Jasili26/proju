@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="margin: -8px;">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Kirjaudu sisään</title>
@@ -11,113 +11,133 @@
 </head>
 
 <div id="aloitus">
-<section id="esittely">
-    <h1 id="otsikko">Story Domination</h1>
-    <p id="teksti">Tervetuloa tarinoiden luovaan maailmaan! Jokaisessa meissä
-        elää pieni tarinoija. Täällä mielikuvitksella ei ole rajoja!</p>
-    <video id="taustavideo" autoplay loop muted poster="http">
-        <source src="graphics/video.mp4" type="video/mp4">
-    </video>
-</section>
+    <section id="esittely">
+        <h1 id="otsikko">Story Domination</h1>
+        <p id="teksti">Tervetuloa tarinoiden luovaan maailmaan! Jokaisessa meissä
+            elää pieni tarinoija. Täällä mielikuvitksella ei ole rajoja!</p>
+        <video id="taustavideo" autoplay loop muted poster="http">
+            <source src="graphics/video.mp4" type="video/mp4">
+        </video>
+    </section>
 
 
-<section id="oikea">
-    <div id="kirjaudulomake">
-        <form id="kirjautuminen"  class="form-container">
+    <section id="oikea">
+        <div id="kirjaudulomake">
+            <form id="kirjautuminen"  class="form-container">
 
-            <h1>Kirjaudu sisään</h1>
+                <h1 id="kirjaudusisaan"><b>Kirjaudu sisään</b></h1>
 
-            <label for="username"><b>Käyttäjätunnus</b></label>
-            <input class="kentta" type="text" id="username" placeholder="Käyttäjätunnus" name="username">
+                <label for="username"><b>Käyttäjätunnus</b></label>
+                <input class="kentta" type="text" id="username" placeholder="Käyttäjätunnus" name="username">
 
-            <label for="password"><b>Salasana</b></label>
-            <input class="kentta" type="password" id="password" placeholder="Salasana" name="password">
+                <label for="password"><b>Salasana</b></label>
+                <input class="kentta" type="password" id="password" placeholder="Salasana" name="password">
 
-            <input type="submit" id="kirjaudu" class="btn" value="Kirjaudu Sisään">
-        </form>
-        <button id="rekisteroidy" class="open-button" onclick="openForm()">Rekisteröidy</button>
+                <input type="submit" id="kirjaudu" class="btn" value="Kirjaudu Sisään">
+            </form>
+            <button id="rekisteroidy" class="open-button" onclick="openForm()">Rekisteröidy</button>
 
-    </div>
-
-
-    <div class="form-popup" id="myForm">
-        <form class="form-container" id="rek">
-            <h1>Luo uusi tili</h1>
-
-            <label for="username2"><b>Käyttäjätunnus:</b></label>
-            <input type="text" id="username2" placeholder="Käyttäjätunnus" name="username2" required>
-
-            <label for="fname"><b>Nimi:</b></label>
-            <input type="text" id="fname" placeholder="Nimi" name="fname" required>
-
-            <label for="email"><b>Sähköposti:</b></label>
-            <input type="text" id="email" placeholder="Sähköposti" name="email" pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$' required>
-
-            <label for="psw"><b>Salasana:</b></label>
-            <input type="password" id="psw" placeholder="Salasana" name="psw" pattern='(?=.*[A-Z]).{8,}' oninvalid="setCustomValidity('väh. 8 merkkiä, Iso Kirjain ja Numero')" oninput="setCustomValidity('')" required>
+        </div>
 
 
+        <div class="form-popup" id="myForm">
+            <form class="form-container" id="rek">
+                <h1 id="luouusitili"><b>Luo uusi tili</b></h1>
 
-            <input id="submitnappi" type="submit" class="btn" value="Rekisteröidy">
-            <button id="suljenappi" type="button" class="btn cancel" onclick="closeForm()">Sulje</button>
-        </form>
-    </div>
-    <p id="success"></p>
-</section>
+                <label for="username2"><b>Käyttäjätunnus:</b></label>
+                <input type="text" id="username2" placeholder="Käyttäjätunnus" name="username2" required>
+
+                <label for="fname"><b>Nimi:</b></label>
+                <input type="text" id="fname" placeholder="Nimi" name="fname" required>
+
+                <label for="email"><b>Sähköposti:</b></label>
+                <input type="text" id="email" placeholder="Sähköposti" name="email" pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$' required>
+
+                <label for="psw"><b>Salasana:</b></label>
+                <input type="password" id="psw" placeholder="Salasana" name="psw" pattern='(?=.*[A-Z]).{8,}' oninvalid="setCustomValidity('Väh. 8 merkkiä, iso kirjain ja numero')" oninput="setCustomValidity('')" required>
+
+
+
+                <input id="submitnappi" type="submit" class="btn" value="Rekisteröidy">
+                <button id="suljenappi" type="button" class="btn cancel" onclick="closeForm()">Sulje</button>
+            </form>
+        </div>
+        <p id="success"></p>
+    </section>
 </div>
 
 <div id="home"  style="display:none">
-<header>
-    <nav>
-        <div>
-            <h3 id="logo">Story Domination</h3>
-        </div>
-        <div>
-            <a><span>Kirjoita</span></a>
+    <header>
+        <nav>
+            <div>
+                <h3 id="logo">Story Domination</h3>
+            </div>
+            <div>
+                <a><span>Kirjoita</span></a>
 
-        </div>
-        <div>
-            <a><span>Lue</span></a>
+            </div>
+            <div>
+                <a><span>Lue</span></a>
 
-        </div>
+            </div>
 
-        <div>
-            <a><span>Tietoja</span></a>
-        </div>
-        <section>
-            <a> <i class="fas fa-plus"></i></a>
+            <div>
+                <a><span>Tietoja</span></a>
+            </div>
+            <section>
+                <a onclick="newStory()"> <i class="fas fa-plus"></i></a>
 
-        </section>
-        <section>
-            <a> <i class="far fa-user"></i> </a>
-        </section>
-        <section>
-            <a> <i class="far fa-bell"></i></a>
-        </section>
-    </nav>
+            </section>
+            <section>
+                <a id="logOut"> <i class="far fa-user"></i> </a>
+            </section>
+            <section>
+                <a> <i class="far fa-bell"></i></a>
+            </section>
+        </nav>
 
-    <nav id="mobilenavigation">
-        <div id="menuToggle">
+        <nav id="mobilenavigation">
+            <div id="menuToggle">
 
-            <input type="checkbox" />
-
-
-            <span></span>
-            <span></span>
-            <span></span>
+                <input type="checkbox" />
 
 
-            <ul id="menu">
-                <a href="#"><li>Kirjoita</li></a>
-                <a href="#"><li>Parhaat Tarinat</li></a>
-                <a href="#"><li>Uusimmat Tarinat</li></a>
-                <a href="#"><li>Tietoja</li></a>
+                <span></span>
+                <span></span>
+                <span></span>
 
-            </ul>
-        </div>
-    </nav>
 
-</header>
+                <ul id="menu">
+                    <a href="#"><li>Kirjoita</li></a>
+                    <a href="#"><li>Parhaat Tarinat</li></a>
+                    <a href="#"><li>Uusimmat Tarinat</li></a>
+                    <a href="#"><li>Tietoja</li></a>
+
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <div id="newstory" style="display:none">
+        <form id="news"  class="form-container">
+
+            <h1 id="storynew"><b>Luo Uusi Tarina</b></h1>
+
+            <label for="otsikko"><b>Otsikko</b></label>
+            <input class="kentta" type="text" id="head"  name="head">
+
+            <label for="password"><b>Genre</b></label>
+            <input class="kentta" type="text" id="genre"  name="genre">
+
+            <label for="password"><b>Aloitus teksti</b></label>
+            <input class="kentta" type="text" id="aloite"  name="aloite">
+
+            <input type="submit" id="new" class="btn" value="Luo Tarina">
+        </form>
+
+
+    </div>
 </div>
 
 <p id="userinfo"></p>

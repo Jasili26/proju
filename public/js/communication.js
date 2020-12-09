@@ -11,6 +11,8 @@ const communication = (() => {
         return await response.json();
     };
 
+
+
 // get all users
     const getUsers = async () => {
         try {
@@ -69,8 +71,37 @@ const communication = (() => {
         }
     };
 
-    return {
+    const getStories = async () => {
+        try {
+            const options = {
+                headers: {
+                    'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
+                },
+            };
+            return await doFetch(urlToServer + '/story', options);
+        } catch (e) {
+            throw new Error(e.message);
+        }
+    };
 
+    const newStory = async (data) => {
+        try {
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            };
+            return await doFetch(urlToServer + '/story/new', options);
+        } catch (e) {
+            throw new Error(e.message);
+        }
+    };
+
+    return {
+        getStories,
+        newStory,
         getUsers,
         login,
         register,

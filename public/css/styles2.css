@@ -7,9 +7,12 @@
 
 body {
     font-family: 'Lato', sans-serif;
+    font-weight: 300;
     background-color: #ebebeb;
     overflow-x: hidden;
-    text-align: center;
+    /* korjataan etusivun margin
+    margin: 8px; */
+    /*    text-align: center; */
 }
 
 #logo {
