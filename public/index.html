@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="margin: -8px;">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Kirjaudu sisään</title>
@@ -25,7 +25,7 @@
     <div id="kirjaudulomake">
         <form id="kirjautuminen"  class="form-container">
 
-            <h1>Kirjaudu sisään</h1>
+            <h1 id="kirjaudusisaan"><b>Kirjaudu sisään</b></h1>
 
             <label for="username"><b>Käyttäjätunnus</b></label>
             <input class="kentta" type="text" id="username" placeholder="Käyttäjätunnus" name="username">
@@ -42,7 +42,7 @@
 
     <div class="form-popup" id="myForm">
         <form class="form-container" id="rek">
-            <h1>Luo uusi tili</h1>
+            <h1 id="luouusitili"><b>Luo uusi tili</b></h1>
 
             <label for="username2"><b>Käyttäjätunnus:</b></label>
             <input type="text" id="username2" placeholder="Käyttäjätunnus" name="username2" required>
@@ -54,7 +54,7 @@
             <input type="text" id="email" placeholder="Sähköposti" name="email" pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$' required>
 
             <label for="psw"><b>Salasana:</b></label>
-            <input type="password" id="psw" placeholder="Salasana" name="psw" pattern='(?=.*[A-Z]).{8,}' oninvalid="setCustomValidity('väh. 8 merkkiä, Iso Kirjain ja Numero')" oninput="setCustomValidity('')" required>
+            <input type="password" id="psw" placeholder="Salasana" name="psw" pattern='(?=.*[A-Z]).{8,}' oninvalid="setCustomValidity('Väh. 8 merkkiä, iso Kirjain ja numero')" oninput="setCustomValidity('')" required>
 
 
 

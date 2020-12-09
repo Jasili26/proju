@@ -25,7 +25,7 @@ kirjautuminen.addEventListener('submit', async (evt) => {
             // show/hide forms + cats
             aloitus.style.display = 'none';
             home.style.display = 'block';
-            userInfo.innerHTML = `Mukava nähdä! ${json.user.username}`;
+            userInfo.innerHTML = `Mukava nähdä ${json.user.username}!`;
 
         }
     } catch (e) {
