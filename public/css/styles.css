@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
 
 body {
     font-family: 'Lato', sans-serif;
@@ -193,12 +193,12 @@ h1 {
 }
 
 #news, #newe {
-    border: 3px solid #0B6E4F;
+    border: 3px solid #f1f1f1;
     padding: 20px;
     position: absolute;
     left: 33%;
     top: 15%;
-    background: linear-gradient(to bottom right, #0B6E4F 0%, #ffffff 100%);
+    background: #ffffff;
     max-width: 500px;
     width: 500px;
 }
@@ -207,13 +207,39 @@ h1 {
     background-color: #0B6E4F;
 }
 
-#newend {
 
+#showstory {
+    text-align: center;
+    border: solid 3px red;
+/*    padding: 10px 50px 20px 50px; */
+    position: absolute;
+    right: 10%;
+    left: 10%;
 }
 
+#osio1, #osio3, #osio4 {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 35px;
+    color: black;
+}
 
+#osio1 {
+    font-weight: 700;
+    font-size: 45px;
+}
 
-
+#osio2 {
+    font-size: 35px;
+    text-decoration: underline;
+}
+/*
+#osio4 {
+    position: absolute;
+    right: 10%;
+    left: 10%;
+    text-align: center;
+} */
 
 
 
@@ -310,6 +336,15 @@ h1 {
 
     #submitnappi:hover, #suljenappi:hover {
         opacity: 0.8;
+    }
+
+    #news, #newe {
+        width: 70%;
+        max-height: 95%;
+        left: 5%;
+        position: absolute;
+        top: 10%;
+        border: none;
     }
 
 

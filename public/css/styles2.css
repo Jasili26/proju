@@ -10,9 +10,6 @@ body {
     font-weight: 300;
     background-color: #ffffff;
     overflow-x: hidden;
-    /* korjataan etusivun margin
-    margin: 8px; */
-    /*    text-align: center; */
 }
 
 #logo {
@@ -201,8 +198,8 @@ p {
     width: 40px;
     height: 32px;
     position: absolute;
-    top: -7px;
-    left: -5px;
+/*    top: -7px;
+    left: -5px; */
 
     cursor: pointer;
 
@@ -262,7 +259,7 @@ p {
 #menu {
     position: absolute;
     width: 300px;
-    margin: -100px 0 0 -50px;
+    margin: -100px 0 0 -35px;
     padding: 50px;
     padding-top: 125px;
 
