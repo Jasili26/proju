@@ -5,7 +5,7 @@ const promisePool = pool.promise();
 const getAllEnds = async () => {
     try {
         // TODO: do the LEFT (or INNER) JOIN to get owner name too.
-        const [rows] = await promisePool.query('SELECT * FROM end WHERE ready = 0 ORDER BY RAND() LIMIT 1;');
+        const [rows] = await promisePool.query('SELECT * FROM end ORDER BY RAND() LIMIT 1;');
         console.log('rows', rows);
         return rows;
     } catch (e) {

@@ -4,7 +4,7 @@ const router = express.Router();
 const {body} = require('express-validator');
 const endController = require('../controllers/endController');
 
-router.get('/', endController.end_list_get);
+router.get('/show', endController.end_list_get);
 
 router.post('/new',
     [

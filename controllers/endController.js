@@ -4,8 +4,8 @@ const { validationResult } = require('express-validator');
 const endModel = require('../models/endModel');
 
 const end_list_get = async (req, res) => {
-    const stories = await endModel.getAllEnds();
-    res.json(stories);
+    const ends = await endModel.getAllEnds();
+    res.json(ends);
 };
 
 

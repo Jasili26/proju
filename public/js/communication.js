@@ -71,14 +71,29 @@ const communication = (() => {
         }
     };
 
-    const showStory = async () => {
+    const showStorys = async () => {
         try {
+            console.log("communication");
             const options = {
                 headers: {
                     'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
                 },
             };
-            return await doFetch(urlToServer + '/story', options);
+            return await doFetch(urlToServer + '/story/show', options);
+        } catch (e) {
+            throw new Error(e.message);
+        }
+    };
+
+    const showEnds = async () => {
+        try {
+            console.log("communication");
+            const options = {
+                headers: {
+                    'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
+                },
+            };
+            return await doFetch(urlToServer + '/end/show', options);
         } catch (e) {
             throw new Error(e.message);
         }
@@ -116,7 +131,8 @@ const communication = (() => {
 
     return {
         endStory,
-        showStory,
+        showStorys,
+        showEnds,
         newStory,
         getUsers,
         login,

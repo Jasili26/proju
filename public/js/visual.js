@@ -12,27 +12,71 @@ const rekform = document.querySelector('#myForm');
 const news = document.querySelector('#news');
 const newe = document.querySelector('#newe');
 const logOut = document.querySelector('#logOut');
+const show = document.querySelector('#show');
+const profiili = document.querySelector('#profiili');
 
 
 // create user options to <select>
 const showStory = async () => {
-    const storyLists = await communication.showStory();
+    const storyLists = await communication.showStorys();
     storyLists.forEach((list) => {
         // clear user list
         list.innerHTML = '';
-        storyLists.forEach((story) => {
+        storyLists.forEach((stories) => {
             // create options with DOM methods
             const option = document.createElement('option');
-            option.value = story.id;
-            option.innerHTML = story.header;
-            option.innerHTML = story.genre;
-            option.innerHTML = story.teaser;
+            document.getElementById("osio1").innerHTML=stories.header;
+            document.getElementById("osio2").innerHTML=stories.genre;
+            document.getElementById("osio3").innerHTML=stories.teaser;
+            console.log(stories.id);
+            console.log(stories.header);
+            console.log(stories.genre);
+            console.log(stories.teaser);
             option.classList.add('light-border');
-            list.appendChild(option);
+
+
         });
     });
 };
 
+const showEnd = async () => {
+    const endLists = await communication.showEnds();
+    endLists.forEach((list) => {
+        // clear user list
+        list.innerHTML = '';
+        endLists.forEach((ends) => {
+            // create options with DOM methods
+            const option = document.createElement('option');
+            document.getElementById("osio4").innerHTML=ends.text;
+            console.log(ends.id);
+            console.log(ends.text);
+            option.classList.add('light-border');
+
+
+        });
+    });
+};
+
+function showAB() {
+    showStory();
+    showEnd();
+}
+
+show.addEventListener('submit', async (evt) => {
+    evt.preventDefault();
+    const data = serializeJson(show);
+    try {
+        const json = await communication.showStorys(data);
+        // save token
+        if (json.message === 'ok') {
+            showStory();
+
+
+        }
+    } catch (e) {
+        alert(e.message);
+    }
+});
 
 
 
@@ -51,7 +95,9 @@ kirjautuminen.addEventListener('submit', async (evt) => {
             aloitus.style.display = 'none';
             home.style.display = 'block';
             userInfo.innerHTML = `Mukava nähdä ${json.user.username}!`;
+            profiili.innerHTML = `${json.user.username}`;
 
+            showStory();
         }
     } catch (e) {
         alert(e.message);
@@ -106,7 +152,7 @@ news.addEventListener('submit', async (evt) => {
         // save token
         if (json.message === 'tarina ok') {
             // show/hide forms + cats
-            news.style.display = 'none';
+            //news.style.display = 'none';
             alert('Uusi Tarina Luotu!')
 
         }
@@ -124,7 +170,7 @@ newe.addEventListener('submit', async (evt) => {
         // save token
         if (json.message === 'end ok') {
             // show/hide forms + cats
-            newe.style.display = 'none';
+            //newe.style.display = 'none';
             alert('Uusi Tarinan Lopetus Luotu!')
 
         }

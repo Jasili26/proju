@@ -4,7 +4,9 @@ const router = express.Router();
 const {body} = require('express-validator');
 const storyController = require('../controllers/storyController');
 
-router.get('/', storyController.story_list_get);
+router.get('/show', storyController.story_list_get);
+
+
 
 router.post('/new',
     [

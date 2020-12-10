@@ -81,7 +81,7 @@
 
             </div>
             <div>
-                <a><span>Lue</span></a>
+                <a onclick="showAll()"><span>Lue</span></a>
 
             </div>
 
@@ -94,6 +94,9 @@
             </section>
             <section>
                 <a> <i class="far fa-user"></i> </a>
+                <div>
+                    <a id="profiili"></a>
+                </div>
             </section>
             <section>
                 <a> <i class="far fa-bell"></i></a>
@@ -112,9 +115,9 @@
 
 
                 <ul id="menu">
-                    <a href="#"><li>Kirjoita</li></a>
-                    <a href="#"><li>Parhaat Tarinat</li></a>
-                    <a href="#"><li>Uusimmat Tarinat</li></a>
+                    <a onclick="newStory()"><li>Uusi Tarinan Alku</li></a>
+                    <a onclick="newEnd()"><li>Uusi Tarinan Loppu</li></a>
+                    <a onclick="showAll()"><li>Lue</li></a>
                     <a href="#"><li>Tietoja</li></a>
 
                 </ul>
@@ -147,7 +150,7 @@
 
             <h1 id="storyend"><b>Luo Tarinan päätös</b></h1>
 
-            <label for="otsikko"><b>Teksti:</b></label>
+            <label for="otsikko"><b>Lopetus</b></label>
             <input class="kentta" type="text" id="end"  name="end">
 
 
@@ -155,6 +158,16 @@
         </form>
 
 
+    </div>
+    <div id="showstory" style="display:none">
+        <form id="show"  class="form-container">
+            <input type="submit" id="shownew" class="btn" value="Luo Uusi Random Tarina" onClick="showAB()">
+        </form>
+        <h1 id="osio1"></h1>
+        <h3 id="osio2"></h3>
+        <p id="osio3"></p>
+        <br>
+        <p id="osio4"></p>
     </div>
 </div>
 

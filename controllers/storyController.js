@@ -3,7 +3,10 @@
 const { validationResult } = require('express-validator');
 const storyModel = require('../models/storyModel');
 
+const stories = storyModel.stories;
+
 const story_list_get = async (req, res) => {
+    console.log("controller");
     const stories = await storyModel.getAllStories();
     res.json(stories);
 };
