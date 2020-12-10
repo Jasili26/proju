@@ -4,25 +4,25 @@ const cors = require('cors');
 const fs      = require('fs');
 const https = require('https');
 const bodyParser = require('body-parser');
+const storyRoute = require('./routes/storyRoute');
+const endRoute = require('./routes/endRoute');
 const userRoute = require('./routes/userRoute');
 const passport = require('./utils/pass.js');
 const authRoute = require('./routes/authRoute');
-const storyRoute = require('./routes/storyRoute');
-const endRoute = require('./routes/endRoute');
-const app2 = express();
+const app = express();
 
-app2.enable('trust proxy');
+app.enable('trust proxy');
 
-app2.use(cors());
+app.use(cors());
 // parse application/x-www-form-urlencoded
-app2.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: false}));
 // parse application/json
-app2.use(bodyParser.json());
+app.use(bodyParser.json());
 
 
 // if production redirect to https
 if (process.env.NODE_ENV === 'production') {
-    app2.use((req, res, next) => {
+    app.use((req, res, next) => {
         if (req.secure) {
             // request was via https, so do no special handling
             next();
@@ -39,17 +39,17 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
-app2.use(express.static('public'));
-app2.use(express.static('uploads'));
-app2.use('/thumbnails', express.static('thumbnails'));
+app.use(express.static('public'));
+app.use(express.static('uploads'));
+app.use('/thumbnails', express.static('thumbnails'));
 
-app2.use('/auth', authRoute);
-app2.use('/end', endRoute);
-app2.use('/story', storyRoute);
-app2.use('/user', passport.authenticate('jwt', {session: false}), userRoute);
+app.use('/auth', authRoute);
+app.use('/end', endRoute);
+app.use('/story', storyRoute);
+app.use('/user', passport.authenticate('jwt', {session: false}), userRoute);
 
 // http
-app2.listen(3001, () => console.log(`HTTP on port ${3001}!`));
+app.listen(3001, () => console.log(`HTTP on port ${3001}!`));
 
 // if production, add https, with this if no need to install certs locally
 if (process.env.NODE_ENV === 'production') {
@@ -59,6 +59,6 @@ if (process.env.NODE_ENV === 'production') {
         key: sslkey,
         cert: sslcert
     };
-    https.createServer(options, app2).listen(8001,
+    https.createServer(options, app).listen(8001,
         () => console.log(`HTTPS on port ${8001}!`)); //https traffic
 }
