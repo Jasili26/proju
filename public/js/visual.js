@@ -10,7 +10,28 @@ const userInfo = document.querySelector('#userinfo');
 const success = document.querySelector('#success');
 const rekform = document.querySelector('#myForm');
 const news = document.querySelector('#news');
+const newe = document.querySelector('#newe');
 const logOut = document.querySelector('#logOut');
+
+
+// create user options to <select>
+const showStory = async () => {
+    const storyLists = await communication.showStory();
+    storyLists.forEach((list) => {
+        // clear user list
+        list.innerHTML = '';
+        storyLists.forEach((story) => {
+            // create options with DOM methods
+            const option = document.createElement('option');
+            option.value = story.id;
+            option.innerHTML = story.header;
+            option.innerHTML = story.genre;
+            option.innerHTML = story.teaser;
+            option.classList.add('light-border');
+            list.appendChild(option);
+        });
+    });
+};
 
 
 
@@ -76,7 +97,7 @@ rek.addEventListener('submit', async (evt) => {
         alert(e.message);
     }
 });
-
+//uusitarina
 news.addEventListener('submit', async (evt) => {
     evt.preventDefault();
     const data = serializeJson(news);
@@ -94,6 +115,26 @@ news.addEventListener('submit', async (evt) => {
         alert(e.message);
     }
 });
+
+newe.addEventListener('submit', async (evt) => {
+    evt.preventDefault();
+    const data = serializeJson(newe);
+    try {
+        const json = await communication.endStory(data);
+        // save token
+        if (json.message === 'end ok') {
+            // show/hide forms + cats
+            newe.style.display = 'none';
+            alert('Uusi Tarinan Lopetus Luotu!')
+
+        }
+
+    } catch (e) {
+        alert(e.message);
+    }
+});
+
+
 
 //
 if (sessionStorage.getItem('token')) {

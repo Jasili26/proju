@@ -74,6 +74,10 @@
             </div>
             <div>
                 <a><span>Kirjoita</span></a>
+                <div>
+                    <a onclick="newStory()">Tarinan Alku</a>
+                    <a onclick="newEnd()">Tarinan Loppu</a>
+                </div>
 
             </div>
             <div>
@@ -85,11 +89,11 @@
                 <a><span>Tietoja</span></a>
             </div>
             <section>
-                <a onclick="newStory()"> <i class="fas fa-plus"></i></a>
+                <a id="logOut"> <i class="fas fa-sign-out-alt"></i></a>
 
             </section>
             <section>
-                <a id="logOut"> <i class="far fa-user"></i> </a>
+                <a> <i class="far fa-user"></i> </a>
             </section>
             <section>
                 <a> <i class="far fa-bell"></i></a>
@@ -134,6 +138,20 @@
             <input class="kentta" type="text" id="aloite"  name="aloite">
 
             <input type="submit" id="new" class="btn" value="Luo Tarina">
+        </form>
+
+
+    </div>
+    <div id="newend"  style="display:none">
+        <form id="newe"  class="form-container">
+
+            <h1 id="storyend"><b>Luo Tarinan päätös</b></h1>
+
+            <label for="otsikko"><b>Teksti:</b></label>
+            <input class="kentta" type="text" id="end"  name="end">
+
+
+            <input type="submit" id="nend" class="btn" value="Luo Tarina">
         </form>
 
 

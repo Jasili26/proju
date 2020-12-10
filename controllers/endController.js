@@ -1,16 +1,16 @@
 'use strict';
 
 const { validationResult } = require('express-validator');
-const storyModel = require('../models/storyModel');
+const endModel = require('../models/endModel');
 
-const story_list_get = async (req, res) => {
-    const stories = await storyModel.getAllStories();
+const end_list_get = async (req, res) => {
+    const stories = await endModel.getAllEnds();
     res.json(stories);
 };
 
 
 
-const story_create_post = async (req, res, next) => {
+const end_create_post = async (req, res, next) => {
     // Extract the validation errors from a request.
     const errors = validationResult(req);
 
@@ -21,14 +21,12 @@ const story_create_post = async (req, res, next) => {
 
 
         const params = [
-            req.body.head,
-            req.body.genre,
-            req.body.aloite,
+            req.body.end,
 
         ];
 
-        if (await storyModel.addStory(params)) {
-            res.status(200).json({message: 'tarina ok'});
+        if (await endModel.addEnd(params)) {
+            res.status(200).json({message: 'end ok'});
         } else {
             res.status(400).json({error: 'register error'});
         }
@@ -36,6 +34,6 @@ const story_create_post = async (req, res, next) => {
 };
 
 module.exports = {
-    story_create_post,
-    story_list_get
+    end_create_post,
+    end_list_get
 };

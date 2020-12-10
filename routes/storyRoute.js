@@ -14,8 +14,9 @@ router.post('/new',
 
     ],
 
-
     storyController.story_create_post,
+
+
 
 );
 

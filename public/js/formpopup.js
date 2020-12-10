@@ -9,5 +9,12 @@ function closeForm() {
 function newStory() {
     document.getElementById("newstory").style.display = "block";
     document.getElementById("userinfo").style.display = "none";
+    document.getElementById("newend").style.display = "none";
+}
+
+function newEnd() {
+    document.getElementById("newstory").style.display = "none";
+    document.getElementById("userinfo").style.display = "none";
+    document.getElementById("newend").style.display = "block";
 }
 

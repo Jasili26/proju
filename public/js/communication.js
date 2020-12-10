@@ -71,7 +71,7 @@ const communication = (() => {
         }
     };
 
-    const getStories = async () => {
+    const showStory = async () => {
         try {
             const options = {
                 headers: {
@@ -99,8 +99,24 @@ const communication = (() => {
         }
     };
 
+    const endStory = async (data) => {
+        try {
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            };
+            return await doFetch(urlToServer + '/end/new', options);
+        } catch (e) {
+            throw new Error(e.message);
+        }
+    };
+
     return {
-        getStories,
+        endStory,
+        showStory,
         newStory,
         getUsers,
         login,

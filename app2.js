@@ -8,6 +8,7 @@ const userRoute = require('./routes/userRoute');
 const passport = require('./utils/pass.js');
 const authRoute = require('./routes/authRoute');
 const storyRoute = require('./routes/storyRoute');
+const endRoute = require('./routes/endRoute');
 const app2 = express();
 
 app2.enable('trust proxy');
@@ -43,6 +44,7 @@ app2.use(express.static('uploads'));
 app2.use('/thumbnails', express.static('thumbnails'));
 
 app2.use('/auth', authRoute);
+app2.use('/end', endRoute);
 app2.use('/story', storyRoute);
 app2.use('/user', passport.authenticate('jwt', {session: false}), userRoute);
 
