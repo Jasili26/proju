@@ -188,6 +188,39 @@ h1 {
     opacity: 1;
 }
 
+#storynew, #storyend {
+    margin: 5px 0px 40px 0px;
+}
+
+#news, #newe {
+    border: 3px solid #0B6E4F;
+    padding: 20px;
+    position: absolute;
+    left: 33%;
+    top: 15%;
+    background: linear-gradient(to bottom right, #0B6E4F 0%, #ffffff 100%);
+    max-width: 500px;
+    width: 500px;
+}
+
+#new, #nend {
+    background-color: #0B6E4F;
+}
+
+#newend {
+
+}
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 650px) {
     #esittely {
         width: 100%;
