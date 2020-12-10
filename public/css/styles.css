@@ -196,8 +196,10 @@ h1 {
     border: 3px solid #f1f1f1;
     padding: 20px;
     position: absolute;
-    left: 33%;
-    top: 15%;
+/*    left: 33%; */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
     background: #ffffff;
     max-width: 500px;
     width: 500px;
@@ -210,37 +212,40 @@ h1 {
 
 #showstory {
     text-align: center;
-    border: solid 3px red;
-/*    padding: 10px 50px 20px 50px; */
     position: absolute;
     right: 10%;
     left: 10%;
+    top: 20%;
 }
 
 #osio1, #osio3, #osio4 {
     font-weight: 400;
     font-style: italic;
-    font-size: 35px;
+    font-size: 30px;
     color: black;
 }
 
 #osio1 {
     font-weight: 700;
-    font-size: 45px;
+    font-size: 35px;
 }
 
 #osio2 {
     font-size: 35px;
     text-decoration: underline;
+    color: #808a9f;
 }
-/*
-#osio4 {
-    position: absolute;
-    right: 10%;
-    left: 10%;
-    text-align: center;
-} */
 
+#shownew {
+    background-color: #0B6E4F;
+    color: white;
+    position: absolute;
+    top: 120%;
+    width: 300px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
 
 
 
@@ -341,10 +346,28 @@ h1 {
     #news, #newe {
         width: 70%;
         max-height: 95%;
+        transform: none;
         left: 5%;
         position: absolute;
         top: 10%;
         border: none;
+    }
+
+    #showstory {
+        top: 8%;
+        left: 5%;
+        right: 5%;
+    }
+
+    #osio3, #osio4 {
+        font-size: 17px;
+    }
+
+    #osio1, #osio2 {
+        font-size: 21px;
+    }
+    #shownew {
+        max-width: 70%;
     }
 
 
