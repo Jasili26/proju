@@ -2,7 +2,7 @@ const communication = (() => {
     'use strict';
     const urlToServer = '.'; // change url when uploading to server if necessary
 
-// general function for fetching (fetchOptions default value is empty object)
+// general function for fetching
     const doFetch = async (url, fetchOptions = {}) => {
         const response = await fetch(url, fetchOptions);
         if (!response.ok) {
@@ -13,7 +13,7 @@ const communication = (() => {
 
 
 
-// get all users
+// get users
     const getUsers = async () => {
         try {
             const options = {
@@ -70,7 +70,7 @@ const communication = (() => {
             throw new Error(e.message);
         }
     };
-
+//get story
     const showStorys = async () => {
         try {
             console.log("communication");
@@ -84,7 +84,7 @@ const communication = (() => {
             throw new Error(e.message);
         }
     };
-
+//get random storyend
     const showEnds = async () => {
         try {
             console.log("communication");
@@ -98,7 +98,7 @@ const communication = (() => {
             throw new Error(e.message);
         }
     };
-
+//new story
     const newStory = async (data) => {
         try {
             const options = {
@@ -113,7 +113,7 @@ const communication = (() => {
             throw new Error(e.message);
         }
     };
-
+//new end to story
     const endStory = async (data) => {
         try {
             const options = {

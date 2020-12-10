@@ -1,10 +1,10 @@
 const pool = require('../database/db');
 const promisePool = pool.promise();
 
-
+//not to get all ends just 1 random
 const getAllEnds = async () => {
     try {
-        // TODO: do the LEFT (or INNER) JOIN to get owner name too.
+
         const [rows] = await promisePool.query('SELECT * FROM end ORDER BY RAND() LIMIT 1;');
         console.log('rows', rows);
         return rows;
@@ -13,7 +13,7 @@ const getAllEnds = async () => {
         return {error: 'DB Error'};
     }
 };
-
+//insert text to end text
 const addEnd = async (params) => {
     try {
         const [rows] = await promisePool.execute(

@@ -16,41 +16,42 @@ const show = document.querySelector('#show');
 const profiili = document.querySelector('#profiili');
 
 
-// create user options to <select>
+//haetaan random tarinan alku näytetään se htmlnä
 const showStory = async () => {
     const storyLists = await communication.showStorys();
     storyLists.forEach((list) => {
-        // clear user list
+
         list.innerHTML = '';
         storyLists.forEach((stories) => {
-            // create options with DOM methods
+
             const option = document.createElement('option');
             document.getElementById("osio1").innerHTML=stories.header;
             document.getElementById("osio2").innerHTML=stories.genre;
             document.getElementById("osio3").innerHTML=stories.teaser;
-            console.log(stories.id);
-            console.log(stories.header);
-            console.log(stories.genre);
-            console.log(stories.teaser);
-            option.classList.add('light-border');
+           // console.log(stories.id);
+            //console.log(stories.header);
+            //console.log(stories.genre);
+            //console.log(stories.teaser);
+
 
 
         });
     });
 };
 
+//haetaan randomisti yksi tarinan lopetus
 const showEnd = async () => {
     const endLists = await communication.showEnds();
     endLists.forEach((list) => {
-        // clear user list
+
         list.innerHTML = '';
         endLists.forEach((ends) => {
-            // create options with DOM methods
+
             const option = document.createElement('option');
             document.getElementById("osio4").innerHTML=ends.text;
-            console.log(ends.id);
-            console.log(ends.text);
-            option.classList.add('light-border');
+            //console.log(ends.id);
+            //console.log(ends.text);
+
 
 
         });
@@ -89,15 +90,15 @@ kirjautuminen.addEventListener('submit', async (evt) => {
         if (!json.user) {
             alert(json.message);
         } else {
-            // save token
+
             sessionStorage.setItem('token', json.token);
-            // show/hide forms + cats
+
             aloitus.style.display = 'none';
             home.style.display = 'block';
             userInfo.innerHTML = `Mukava nähdä ${json.user.username}!`;
             profiili.innerHTML = `${json.user.username}`;
 
-            showStory();
+
         }
     } catch (e) {
         alert(e.message);
@@ -110,10 +111,10 @@ logOut.addEventListener('click', async (evt) => {
     try {
         const json = await communication.logout();
         console.log(json);
-        // remove token
+
         sessionStorage.removeItem('token');
-        alert('Kirjauduit Ulos!');
-        // show/hide forms + cats
+        alert('Kirjauduit ulos!');
+
         aloitus.style.display = 'block';
         home.style.display = 'none';
     } catch (e) {
@@ -129,13 +130,11 @@ rek.addEventListener('submit', async (evt) => {
     const data = serializeJson(rek);
     try {
         const json = await communication.register(data);
-        // save token
+
         if (json.message === 'register ok') {
-            // show/hide forms + cats
-            // aloitus.style.display = 'none';
-            // home.style.display = 'block';
+
             rekform.style.display = 'none';
-            alert('Rekisteröinti Onnistui!')
+            alert('Rekisteröinti onnistui!')
 
         }
 
@@ -149,11 +148,10 @@ news.addEventListener('submit', async (evt) => {
     const data = serializeJson(news);
     try {
         const json = await communication.newStory(data);
-        // save token
+
         if (json.message === 'tarina ok') {
-            // show/hide forms + cats
-            //news.style.display = 'none';
-            alert('Uusi Tarina Luotu!')
+
+            alert('Uusi tarinan aloitus luotu!')
 
         }
 
@@ -167,11 +165,10 @@ newe.addEventListener('submit', async (evt) => {
     const data = serializeJson(newe);
     try {
         const json = await communication.endStory(data);
-        // save token
+
         if (json.message === 'end ok') {
-            // show/hide forms + cats
-            //newe.style.display = 'none';
-            alert('Uusi Tarinan Lopetus Luotu!')
+
+            alert('Uusi tarinan lopetus luotu!')
 
         }
 
@@ -180,9 +177,6 @@ newe.addEventListener('submit', async (evt) => {
     }
 });
 
-
-
-//
 if (sessionStorage.getItem('token')) {
     aloitus.style.display = 'none';
     home.style.display = 'visible';

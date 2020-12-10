@@ -15,7 +15,7 @@ const end_create_post = async (req, res, next) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-        console.log('user create error', errors);
+        console.log('endstory create error', errors);
         res.send(errors.array());
     } else {
 
@@ -28,7 +28,7 @@ const end_create_post = async (req, res, next) => {
         if (await endModel.addEnd(params)) {
             res.status(200).json({message: 'end ok'});
         } else {
-            res.status(400).json({error: 'register error'});
+            res.status(400).json({error: 'endstory error'});
         }
     }
 };

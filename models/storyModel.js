@@ -1,10 +1,10 @@
 const pool = require('../database/db');
 const promisePool = pool.promise();
 
-
+//not to get all stories only 1 random one
 const getAllStories = async () => {
     try {
-        // TODO: do the LEFT (or INNER) JOIN to get owner name too.
+
         const [rows] = await promisePool.query('SELECT * FROM story WHERE ready = 0 ORDER BY RAND() LIMIT 1;');
         console.log('rows');
         return rows;
@@ -13,7 +13,7 @@ const getAllStories = async () => {
         return {error: 'DB Error'};
     }
 };
-
+//insert input to story table
 const addStory = async (params) => {
     try {
         const [rows] = await promisePool.execute(

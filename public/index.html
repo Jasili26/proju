@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/styles2.css">
+    <link rel="stylesheet" href="./css/modal.css">
 
     <script src="https://kit.fontawesome.com/bf26c56285.js" crossorigin="anonymous"></script>
 </head>
@@ -14,7 +15,7 @@
     <section id="esittely">
         <h1 id="otsikko">Story Domination</h1>
         <p id="teksti">Tervetuloa tarinoiden luovaan maailmaan! Jokaisessa meissä
-            elää pieni tarinoija. Täällä mielikuvitksella ei ole rajoja!</p>
+            elää pieni tarinoija. Täällä mielikuvituksella ei ole rajoja!</p>
         <video id="taustavideo" autoplay loop muted poster="http">
             <source src="graphics/video.mp4" type="video/mp4">
         </video>
@@ -86,7 +87,7 @@
             </div>
 
             <div>
-                <a><span>Tietoja</span></a>
+                <a id="myBtn2"><span>Tietoja</span></a>
             </div>
             <section>
                 <a id="logOut"> <i class="fas fa-sign-out-alt"></i></a>
@@ -118,7 +119,7 @@
                     <a onclick="newStory()"><li>Uusi Tarinan Alku</li></a>
                     <a onclick="newEnd()"><li>Uusi Tarinan Loppu</li></a>
                     <a onclick="showAll()"><li>Lue</li></a>
-                    <a href="#"><li>Tietoja</li></a>
+                    <a id="myBtn"><li>Tietoja</li></a>
 
                 </ul>
             </div>
@@ -140,7 +141,7 @@
             <label for="password"><b>Aloitus teksti</b></label>
             <input class="kentta" type="text" id="aloite"  name="aloite">
 
-            <input type="submit" id="new" class="btn" value="Luo Tarina">
+            <input type="submit" id="new" class="btn" value="Luo Aloitus">
         </form>
 
 
@@ -154,29 +155,44 @@
             <input class="kentta" type="text" id="end"  name="end">
 
 
-            <input type="submit" id="nend" class="btn" value="Luo Tarina">
+            <input type="submit" id="nend" class="btn" value="Luo Lopetus">
         </form>
 
 
     </div>
     <div id="showstory" style="display:none">
         <form id="show"  class="form-container">
-            <input type="submit" id="shownew" class="btn" value="Luo Uusi Random Tarina" onClick="showAB()">
+            <input type="submit" id="shownew" class="btn" value="Luo uusi random tarina" onClick="showAB()">
         </form>
-        <h1 id="osio1"></h1>
         <h3 id="osio2"></h3>
+        <h1 id="osio1"></h1>
+        <br>
         <p id="osio3"></p>
         <br>
         <p id="osio4"></p>
     </div>
+
+
 </div>
 
 <p id="userinfo"></p>
+
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <center><h3>Story Domination</h3><br>
+        <p>Tekijät: Joona Salonen ja Tuuni Mustonen. Kouluprojekti 2020.</p></center>
+    </div>
+
+</div>
 
 <script src="./js/serialize.js"></script>
 <script src="./js/communication.js"></script>
 <script src="./js/visual.js"></script>
 <script src="./js/formpopup.js"></script>
+<script src="./js/modal.js"></script>
 
 
 </body>

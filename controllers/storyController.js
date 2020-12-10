@@ -6,7 +6,7 @@ const storyModel = require('../models/storyModel');
 const stories = storyModel.stories;
 
 const story_list_get = async (req, res) => {
-    console.log("controller");
+
     const stories = await storyModel.getAllStories();
     res.json(stories);
 };
@@ -18,7 +18,7 @@ const story_create_post = async (req, res, next) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-        console.log('user create error', errors);
+        console.log('story create error', errors);
         res.send(errors.array());
     } else {
 
@@ -33,7 +33,7 @@ const story_create_post = async (req, res, next) => {
         if (await storyModel.addStory(params)) {
             res.status(200).json({message: 'tarina ok'});
         } else {
-            res.status(400).json({error: 'register error'});
+            res.status(400).json({error: 'story error'});
         }
     }
 };
